@@ -32,12 +32,12 @@ User Function zRelFwPr()
     Local oFontTit  := TFont():New(cNomeFont, 9, -13, .T., .T., 5, .T., 5, .T., .F.)
 
 
-    oPrinter := FWMSPrinter():New("Relatório_", IMP_PDF, lAdjustToLegacy, , lDisableSetup)
+    oPrinter := FWMSPrinter():New("RelatÃ³rio_", IMP_PDF, lAdjustToLegacy, , lDisableSetup)
     oPrinter:SetResolution(72)
     oPrinter:SetPortrait()
     oPrinter:SetPaperSize(DMPAPER_A4)
     oPrinter:SetMargin(60,60,60,60) // nEsquerda, nSuperior, nDireita, nInferior
-    oPrinter:cPathPDF := "C:\Relatórios\" // Caso seja utilizada impressão em IMP_PDF
+    oPrinter:cPathPDF := "C:\RelatÃ³rios\" // Caso seja utilizada impressÃ£o em IMP_PDF
 
     // DbSelectArea("QRY")
     // QRY->(DbGoTop())
@@ -72,18 +72,18 @@ User Function zRelFwPr()
     
     QRY->(DbCloseArea())
 
-    cTexto := "Relação de Grupos de Produtos"
+    cTexto := "RelaÃ§Ã£o de Clientes"
     oPrinter:SayAlign(nLinCab, nColMeio - 120, cTexto, oFontTit, 240, 20, COR_PRETO, PAD_CENTER, 0)
      
-    //Linha Separatória
+    //Linha SeparatÃ³ria
     nLinCab += (nTamLin * 2)
     oPrinter:Line(nLinCab, nColIni, nLinCab, nColFin, COR_PRETO)
      
-    //Cabeçalho das colunas
+    //CabeÃ§alho das colunas
     nLinCab += nTamLin
     oPrinter:SayAlign(nLinCab, 15, "Grupo",     oFontDetN, 0080, nTamLin, COR_PRETO, PAD_LEFT, 0)
     oPrinter:SayAlign(nLinCab, 95, "Nome", oFontDetN, 0200, nTamLin, COR_PRETO, PAD_LEFT, 0)
-    oPrinter:SayAlign(nLinCab, 220, "Endereço", oFontDetN, 0200, nTamLin, COR_PRETO, PAD_LEFT, 0)
+    oPrinter:SayAlign(nLinCab, 220, "EndereÃ§o", oFontDetN, 0200, nTamLin, COR_PRETO, PAD_LEFT, 0)
     oPrinter:SayAlign(nLinCab, 320, "CNPJ/CPF", oFontDetN, 0200, nTamLin, COR_PRETO, PAD_LEFT, 0)
     nLinCab += nTamLin
 
